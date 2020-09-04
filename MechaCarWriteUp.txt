@@ -1,0 +1,5 @@
+MechaCarWriteUp.txt
+
+Upper management is looking for your expertise and wants you to design a study that compares the performance of the MechaCar prototype vehicle to other comparable vehicles on the market. In the MechaCarWriteUp.txt text file, write a short description of a statistical study that can quantify how the MechaCar outperforms the competition. In your study design, be sure to write about the following considerations:
+
+For further design study on MechaCar performance with competitors, we can perform statistical analysis on other customer focused aspects such as cost feature of the car and its significance relations with other variables: mpg, color/specific finish, hp.  With more data, we can analyze if cost is predictive of the variables by performing Regression. We can even perform correlation to identify how variables are related to each other (positively/negatively). If you have diff makes of cars, we could perform t-test based on cost analysis between different makes to observe significance difference between variables. We may also focus on the sales data to identify MechaCar outperforms with competitors. 

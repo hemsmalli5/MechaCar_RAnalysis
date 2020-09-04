@@ -1,0 +1,108 @@
+install.packages("tidyverse")
+install.packages("vctrs")
+library(tidyverse)
+
+install.packages("jsonlite")
+
+# import the MechaCar Data
+MechaCar_table <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors=F)
+MechaCar_table
+
+# check variable names
+names(MechaCar_table)
+
+
+# get column names
+colnames(MechaCar_table)
+
+
+# Rename columns
+names(MechaCar_table)[names(MechaCar_table) == "vehicle length"] <- "vehicle_length"
+names(MechaCar_table)[names(MechaCar_table) == "vehicle weight"] <- "vehicle_weight"
+names(MechaCar_table)[names(MechaCar_table) == "spoiler angle"] <- "spoiler_angle"
+names(MechaCar_table)[names(MechaCar_table) == "ground clearance"] <- "ground_clearance"
+
+# Observe the data frame structure
+str(MechaCar_table)
+names(MechaCar_table)
+
+# Summary of the data
+summary(MechaCar_table)
+
+# Get mode of the data
+mode_vehicle_length <- names(sort(-table(MechaCar_table$vehicle_length)))[1]
+mode_vehicle_weight <- names(sort(-table(MechaCar_table$vehicle_weight)))[1]
+mode_spoiler_angle <- names(sort(-table(MechaCar_table$spoiler_angle)))[1]
+mode_ground_clearance <- names(sort(-table(MechaCar_table$ground_clearance)))[1]
+mode_AWD <- names(sort(-table(MechaCar_table$AWD)))[1]
+mode_mpg <- names(sort(-table(MechaCar_table$mpg)))[1]
+
+paste("The mode of the miles per gallon data is", mode_vehicle_length)
+paste("The mode of the miles per gallon data is", mode_vehicle_weight)
+# paste("The mode of the miles per gallon data is", mode_spoiler_angle)
+paste("The mode of the miles per gallon data is", mode_ground_clearance)
+# paste("The mode of the miles per gallon data is", mode_AWD)
+paste("The mode of the miles per gallon data is", mode_mpg)
+
+
+library(ggplot2)
+ggplot(MechaCar_table, aes(mpg)) +
+  geom_histogram(binwidth = 4) + xlab('Miles per Gallon') + ylab('Number of Cars') + 
+  ggtitle('Distribution of Cars by Mileage')
+
+ggplot(MechaCar_table, aes(vehicle_length)) +
+  geom_histogram(binwidth=1) + xlab('Vehicle Lenght') + ylab('Number of Cars') +
+  ggtitle('Distribution of Cars by length')
+
+ggplot(MechaCar_table, aes(vehicle_weight)) +
+  geom_histogram(binwidth=1) + xlab('Vehicle Weight') + ylab('Number of Cars') +
+  ggtitle('Distribution of Cars by weight')
+
+layout(matrix(c(1,2,3,4),2,2)) # optional 4 graphs/page
+plot(fit)
+
+# perform summary of linear regression
+summary(lm(mpg~vehicle_length,MechaCar_table))
+
+# perform multiple linear regression
+mecha_lm <- lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=MechaCar_table)
+summary(mecha_lm)
+summary(mecha_lm)$r.squared 
+
+# perform analysis on the suspension coil
+suspension_data <- read.csv("Suspension_Coil.csv",stringsAsFactors = F,check.names = F)
+
+names(suspension_data)
+
+summary(suspension_data)
+
+
+
+# two sample t-test to determine statistical difference
+# generate two samples for t-test
+sample_table1 <- suspension_data %>% sample_n(50) #generate 50 randomly sampled data points
+sample_table2 <- suspension_data %>% sample_n(50) #generate another 50 randomly sampled data points
+
+# now run two sample t-test to compare means of two samples
+t.test(log10(suspension_data$PSI),log10(sample_table2$PSI)) 
+
+#compare the mean difference between two samples
+
+# Perform Summary Analysis on suspension coil dataset
+# Since we have to perform two sample t-test to compare Mean values, group the data.
+lot_summary <- suspension_data %>% group_by(Manufacturing_Lot) %>%
+  summarise(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI))
+lot_summary
+
+# Total Summary
+total_summary <- suspension_data %>%
+  summarise(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI))
+total_summary
+
+# Suspension Coil T-Tests
+t.test(subset(suspension_data,Manufacturing_Lot=="Lot1")$PSI,mu = 1500)
+t.test(subset(suspension_data,Manufacturing_Lot=="Lot2")$PSI,mu = 1500)
+t.test(subset(suspension_data,Manufacturing_Lot=="Lot3")$PSI,mu = 1500)
+
+# Across all Lots
+t.test(suspension_data$PSI,mu = 1500)
