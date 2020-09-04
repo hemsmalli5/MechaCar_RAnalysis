@@ -19,12 +19,13 @@ The slope of the linear model is not considered to be zero. Through this data, w
 
 		Fig2: Multiple Linear Regression
 Suspension Coil Summary
-Suspension Coil manufacturing data summary:
-•	Mean: 1499.531
-•	Median: 1499.747
-•	Variance: 76.234
-•	Standard Deviation: 8.731
- 		Fig3: Summary on full suspension data (refer to PDF in git repo)
+Suspension Coil manufacturing data summary:<br>
+•	Mean: 1499.531<br>
+•	Median: 1499.747<br>
+•	Variance: 76.234<br>
+•	Standard Deviation: 8.731<br>
+<br>
+ 		Fig3: Summary on full suspension data (refer to PDF in git repo)<br>
 		Fig4: Summary of the Total suspension data by grouping (refer to PDF in git repo)
 
 Summary Interpretation:
