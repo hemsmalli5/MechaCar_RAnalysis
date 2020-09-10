@@ -19,9 +19,12 @@ The slope of the linear model is not considered to be zero. Through this data, w
 As we see that R2=0.7 and hence 70% of the predictions are correct, so we can determine our predictions are correct.
 Fig1: Linear Regression Summary
 Inline-style: 
-![Des Moines McDonalds by Area](https://github.com/hemsmalli5/bikesharing/blob/master/Dashboard%20Images/Des%20Moines%20McDonals%20Location.png)
+![Linear Regression](https://github.com/hemsmalli5/MechaCar_RAnalysis/blob/master/Summary%20images/Linear%20Regression%20Summary.PNG)
 
-		Fig2: Multiple Linear Regression
+Fig2: Multiple Linear Regression
+Inline-style: 
+![Multiple Linear Regression](https://github.com/hemsmalli5/MechaCar_RAnalysis/blob/master/Summary%20images/Multiple%20Linear%20Regression%20Summary.png)
+
 Suspension Coil Summary
 Suspension Coil manufacturing data summary:<br>
 •	Mean: 1499.531<br>
@@ -29,8 +32,10 @@ Suspension Coil manufacturing data summary:<br>
 •	Variance: 76.234<br>
 •	Standard Deviation: 8.731<br>
 <br>
- 		Fig3: Summary on full suspension data (refer to PDF in git repo)<br>
-		Fig4: Summary of the Total suspension data by grouping (refer to PDF in git repo)
+ 
+Fig4: Summary of the Total suspension data by grouping 
+Inline-style: 
+![Suspension data Summary](https://github.com/hemsmalli5/MechaCar_RAnalysis/blob/master/Summary%20images/Lot%20Summary.png)
 
 Summary Interpretation:
 The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per inch. Since suspension data variance (76.23) is under 100PSI, we can predict that the current manufacturing data meets the design specifications.
