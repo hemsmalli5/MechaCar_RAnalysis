@@ -1,6 +1,6 @@
 # Analysis of MechaCar Data
- ## Technical Report
-<br> ## Background
+## Technical Report
+## Background
 
 Resource: mpg testing dataset of 50 potential prototype MechaCars. 
 
@@ -42,7 +42,10 @@ The design specifications for the MechaCar suspension coils dictate that the var
 
 T-Test
 Performing the t-test on the suspension coil data determines the suspension coil’s pound-per-inch results are not statistically different from the mean population results of 1,500 pounds per inch. 
-		Fig5: T-test on suspension data
+Fig5: T-test on suspension data
+Inline-style: 
+![T-Test](https://github.com/hemsmalli5/MechaCar_RAnalysis/blob/master/Summary%20images/t-test.png)
+
 The p = 0.51 > 0.05 means we reject the null hypothesis, therefore the average value was not significantly different from the population mean 1500.
 
 
